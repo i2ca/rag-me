@@ -80,18 +80,7 @@ else:
                 model.rag_use_questions = False
                 model.rag_use_summary = False
                 model.rag_on = False
-                # generate_answers_from_dataset(model, df.copy(), output_name=f"outputs_no_rag_{style}.csv") # Sem RAG
+                generate_answers_from_dataset(model, df.copy(), output_name=f"outputs_no_rag_{style}.csv") # Sem RAG
                 model.rag_on = True 
                 model.rag_use_text = True  
                 generate_answers_from_dataset(model, df, output_name=f"outputs_rag_{style}.csv") # Apenas chunks
-                try:
-                    model.rag_use_text = False
-                    model.rag_use_questions = True
-                    # generate_answers_from_dataset(model, df, output_name=f"outputs_rag_{style}_questions.csv") # Apenas Perguntas
-                    model.rag_use_questions = False
-                    model.rag_use_summary = True
-                    # generate_answers_from_dataset(model, df, output_name=f"outputs_rag_{style}_summary.csv") # Apenas Resumos
-                except Exception as e:
-                    print("Error: ", str(e))
-                    traceback.print_exc()
-                    print("Error while generating answers: ", filename)

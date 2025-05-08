@@ -277,31 +277,6 @@ for chunk_size in chunk_sizes:
             }
         )
 
-
-# # EVALUATE ALL
-# env_variables = []
-# # Get all files in the directory results/paper and subdirectories
-# for root, dirs, files in os.walk("results/paper"):
-#     if len(files) > 0:
-#         print(root)
-#         env_variables.append(
-#             {
-#                 "HF_HOME": HF_HOME,
-#                 "GOOGLE_API_KEY": GOOGLE_API_KEY,
-#                 "HUGGINGFACE_AUTH_TOKEN": HUGGINGFACE_AUTH_TOKEN,
-#                 "DATA_DIR":'data/cvpr-papers-test',
-#                 "RESULTS_DIR":f'{root}',
-#                 "CUDA_DEVICE":CUDA_DEVICE,
-#                 "EMBEDDING_MODEL":'intfloat/multilingual-e5-large-instruct',
-#                 "EMBEDDING_MODEL_DIMENSIONS":1024,
-#                 "BERT_SCORE_EMBEDDING_MODEL": "thenlper/gte-large",
-#                 "GEN_MODEL":"meta-llama/Meta-Llama-3-8B-Instruct",
-#                 "GEN_MODEL_REVISION": "main",
-#                 "CHUNK_SIZE":500,
-#                 "OVERLAP_CHUNKS":50
-#             }
-#         )
-
 # Path to the .env file
 env_file_path = ".env"
 

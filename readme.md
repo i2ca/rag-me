@@ -1,3 +1,6 @@
+# RAG-ME
+RAG-ME is a framework for automatic RAG evaluation, given a document corpus.
+
 # Instructions Run RAG and Test Results
 ## Install dependencies
 First, we need to install the python libraries and CUDA.
@@ -6,8 +9,8 @@ The python used in this project is 3.10.6. It is recommended to use the same ver
 
 Create conda env:
 ```bash
-conda create -n lcad-rag python=3.10.6
-conda activate lcad-rag
+conda create -n ragme python=3.10.6
+conda activate ragme
 ```
 
 Install pytorch according to yout OS and CUDA version. Follow the instructions in this link: https://pytorch.org/get-started/locally/
@@ -64,6 +67,8 @@ python evaluate_chatbot_answers.py
 ```
 
 The evaluation results will be printed on the terminal and the metrics will be saved to the results .csv in your results directory.
+
+If you want to run multiple experiments at once, run the script `run_experiments.py` after editing the env variables for each experiment.
 
 
 # Acknowledgements
