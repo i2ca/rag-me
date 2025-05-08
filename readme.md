@@ -69,3 +69,7 @@ The evaluation results will be printed on the terminal and the metrics will be s
 # Acknowledgements
 Agradecimentos à FAPES, por meio do projeto I2CA - RESOLUÇÃO Nº 285/2021, por fornecer a
 bolsa de pesquisa e equipamentos necessários para desenvolvimento deste projeto.
+
+
+Acknowledgements to FAPES, through the project I2CA - RESOLUTION Nº 285/2021, for providing the
+scholarship and equipment necessary for the development of this project.
