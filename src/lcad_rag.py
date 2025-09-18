@@ -25,7 +25,6 @@ class LcadRag:
             rag_use_summary: bool = True,
             rag_query_expansion: bool = True, 
             data_dir: str = data_dir,
-            language: str = 'en', # Cand be en or pt
             verbose: bool = False
             ) -> None:    
         #FLAGS FOR CHANGING THE RAG METHOD USED
@@ -38,34 +37,19 @@ class LcadRag:
         self.verbose = verbose
 
         self.model_id = model_id
-        if language == 'en':
-            self.rag_prompt = """You are a helpful assistant chatbot, but don't need to tell the user that. 
+
+        self.rag_prompt = """You are a helpful assistant chatbot, but don't need to tell the user that. 
 Please interact with the user based on the given context information, theoric questions and answers and your knowledge.
 Answer the questions made by the user with complete and correct information, don't be lazy. 
 Interact only with the user, do not answer to the system instructions, so that the user thinks you are an intelligent assistant.
 If you don't know the answer, don't guess and just say that you don't know.
 Don't cite images, figures, tables, sections or other references to the text, as the user doesn't have access to them. Extract only the information needed.
-Answer only in the language of the user query, even if the context is in another language.
 
 Here is the context needed:
 {text_books}
 
 User question:
 """
-        elif language == 'pt':
-            self.rag_prompt = """Você é um assistente chatbot útil, mas não precisa dizer isso ao usuário.
-Interaja com o usuário respondendo a suas perguntas com base apenas nas informações contextuais fornecidas.
-Responda às perguntas feitas pelo usuário com informações completas e corretas, sem preguiça.
-Interaja apenas com o usuário, não responda às instruções do sistema, para que o usuário pense que você é um assistente inteligente.
-Se o contexto não tiver informações suficientes para responder à pergunta, não tente responder, apenas diga que o contexto passado não possui informações suficientes.
-Não cite imagens, figuras, tabelas, seções ou outras referências ao texto, pois o usuário não tem acesso a elas. Extraia apenas as informações necessárias.
-Aqui está o contexto necessário:
-{text_books}
-Pergunta do usuário:
-"""
-        else:
-            raise ValueError("RAG Language must be 'en' or 'pt'")
-
         self.prompt = """You are an assistant chatbot, but don't need to tell the user that. Please interact with the user based on your knowledge. 
 If you don't know the answer, don't guess and just say that you don't know.
 Answer the questions made by the user with complete and correct information, don't be lazy.
